@@ -1,5 +1,6 @@
 from django.db import models
 
+# Модель категории
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True, unique=True)
@@ -13,8 +14,9 @@ class Category(models.Model):
         return self.name
 
 
+# Модель продукта
 class Product(models.Model):
-    category = models.ForeignKey(Category, related_name='products', verbose_name="Категория")
+    category = models.ForeignKey(Category, related_name='products', verbose_name="Категория", on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True, verbose_name="Название")
     slug = models.SlugField(max_length=200, db_index=True)
     image = models.ImageField(upload_to='products/%Y/%m/%d/', blank=True, verbose_name="Изображение товара")
