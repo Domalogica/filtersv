@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('filter.shop.urls', namespace='shop'))
+    url(r'^', include('filter.shop.urls', namespace='shop')),
 ]
 
 if settings.DEBUG:
