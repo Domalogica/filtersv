@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = 'filter'
+app_name = 'filter.shop'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
