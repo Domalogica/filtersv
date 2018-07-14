@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'filter.shop'
+    'shop'
 ]
 
 MIDDLEWARE = [
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'filter.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
