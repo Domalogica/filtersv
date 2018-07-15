@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
 from .models import Category, Product
 from filter.cart.forms import CartAddProductForm
+from django.views.decorators.csrf import csrf_exempt
 
 # Страница с товарами
+@csrf_exempt
 def ProductList(request, category_slug=None):
     category = None
     categories = Category.objects.all()
