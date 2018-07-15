@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
+from filter.cart.forms import CartAddProductForm
 
 # Страница с товарами
 def ProductList(request, category_slug=None):
