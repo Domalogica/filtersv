@@ -6,6 +6,7 @@ from .forms import CartAddProductForm
 
 
 @require_POST
+@csrf_exempt
 def CartAdd(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
