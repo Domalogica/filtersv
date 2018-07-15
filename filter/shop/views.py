@@ -17,4 +17,7 @@ def ProductList(request, category_slug=None):
 # Страница товара
 def ProductDetail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    return render(request, 'shop/product/detail.html', {'product': product})
+    cart_product_form = CartAddProductForm()
+    return render_to_response('shop/product/detail.html',
+                             {'product': product,
+                              'cart_product_form': cart_product_form})
