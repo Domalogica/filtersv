@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
 from .models import Category, Product
 from filter.cart.forms import CartAddProductForm
+from django.template.context_processors import csrf
 
 # Страница с товарами
 def ProductList(request, category_slug=None):
@@ -22,3 +23,10 @@ def ProductDetail(request, id, slug):
     return render_to_response('shop/product/detail.html',
                              {'product': product,
                               'cart_product_form': cart_product_form})
+
+    def ProductDetail(request, id, slug):
+        product = get_object_or_404(Product, id=id, slug=slug, available=True)
+        cart_product_form = CartAddProductForm()
+        context = {'product': product, 'cart_product_form': cart_product_form}
+        context.update(csrf(request))
+        return render_to_response('shop/detail.html', context)
