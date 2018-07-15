@@ -3,6 +3,7 @@ from django.views.decorators.http import require_POST
 from filter.shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
+from django.views.decorators.csrf import csrf_exempt
 
 
 @require_POST
