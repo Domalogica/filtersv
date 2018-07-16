@@ -7,6 +7,11 @@ from django.urls import reverse
 from django.utils.html import format_html
 
 
+def OrderDetail(obj):
+    return format_html('<a href="{}">Посмотреть</a>'.format(
+        reverse('orders:AdminOrderDetail', args=[obj.id])
+    ))
+
 def ExportToCSV(modeladmin, request, queryset):
     opts = modeladmin.model._meta
     response = HttpResponse(content_type='text/csv')
@@ -42,9 +47,3 @@ class OrderAdmin(admin.ModelAdmin):
 
 admin.site.register(Order, OrderAdmin)
 
-
-
-def OrderDetail(obj):
-    return format_html('<a href="{}">Посмотреть</a>'.format(
-        reverse('orders:AdminOrderDetail', args=[obj.id])
-    ))
