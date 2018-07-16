@@ -3,7 +3,7 @@ from .models import Order, OrderItem
 from django.http import HttpResponse
 import csv
 import datetime
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.html import format_html
 
 
