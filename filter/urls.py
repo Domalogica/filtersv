@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^cart/', include(('filter.cart.urls', 'filter.cart'), namespace='cart')),
     url(r'^', include(('filter.shop.urls', 'filter.shop'), namespace='shop')),
+    url(r'^order/', include(('filter.orders.urls', 'filter.orders'), namespace='orders')),
 ]
 
 if settings.DEBUG:
