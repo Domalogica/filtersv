@@ -3,12 +3,9 @@ from django.views.decorators.http import require_POST
 from filter.shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
-# from django.views.decorators.csrf import csrf_exempt
-
 
 
 @require_POST
-# @csrf_exempt
 def CartAdd(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
@@ -27,4 +24,10 @@ def CartRemove(request, product_id):
 
 def CartDetail(request):
     cart = Cart(request)
+    for item in cart:
+        item['update_quantity_form'] = CartAddProductForm(
+                                        initial={
+                                            'quantity': item['quantity'],
+                                            'update': True
+                                        })
     return render(request, 'cart/detail.html', {'cart': cart})
