@@ -36,7 +36,8 @@ def ProductDetail(request, id, slug):
 telegram = {}
 
 
-class tele(View):
+
+def tele(request):
     def get(self, request, *args, **kwargs):
         if request.GET.get('name') == "Ф И О":
             a = {"name": None}
@@ -95,11 +96,7 @@ class tele(View):
         #     url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=27390261&text=%s" % (text)
         #     requests.post(url) 
         # return render_template('ok.html', users = len(sad()) - 1, koll = sad()[0][1] - 9607)
-
-        return render(request, 'main.html')
-
-
-
+        return render_to_response('main.html')
 
 
 def get_data(request, *args, **kwargs):
