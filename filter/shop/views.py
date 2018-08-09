@@ -43,7 +43,7 @@ def teles(request):
 
 
 def tele(request):
-    def post(self, request, *args, **kwargs):
+    if request.POST:
         if request.POST.get('name') == "Ф И О":
             a = {"name": None}
             telegram.update(a)
@@ -103,18 +103,8 @@ def tele(request):
         # return render_template('ok.html', users = len(sad()) - 1, koll = sad()[0][1] - 9607)
 
         return render(request, 'main.html', {})
-
-
-
-
-def get_data(request, *args, **kwargs):
-    data = {
-        "sales": 100,
-        "customers": 10,
-    }
-    return JsonResponse(data) # http response
-
-
+    else:
+        return render(request, 'main.html', {})
 
 
 
