@@ -37,6 +37,11 @@ telegram = {}
 
 
 
+def teles(request):
+    return render(request, 'main.html')
+
+
+
 def tele(request):
     def post(self, request, *args, **kwargs):
         if request.POST.get('name') == "Ф И О":
