@@ -42,7 +42,7 @@ def teles(request):
 
 
 
-# def tele(request):
+def tele(request):
 #     def post(self, request, *args, **kwargs):
 #         if request.POST.get('name') == "Ф И О":
 #             a = {"name": None}
