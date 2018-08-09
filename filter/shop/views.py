@@ -82,10 +82,10 @@ def tele(request):
 
         text = """
         Имя: %s
-        Телефон: %s
-        Почта: %s
-        Адрес: %s
-        Комментарий: %s
+    Телефон: %s
+    Почта: %s
+    Адрес: %s
+    Комментарий: %s
         """ % (telegram['name'], telegram['phone'], telegram['mail'], telegram['street'], telegram['comm'])
         print(text)
         if telegram['name']:
