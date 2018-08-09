@@ -96,7 +96,7 @@ class tele(View):
         #     requests.post(url) 
         # return render_template('ok.html', users = len(sad()) - 1, koll = sad()[0][1] - 9607)
 
-        return render(request, '/shop/product/list.html')
+        return render(request, 'main.html')
 
 
 
