@@ -36,35 +36,35 @@ webGets = {}
 wm = []
 
 
-def telegram(view):
-    def get(self, request, *args, **kwargs):
-        if request.GET.get('wm') == "ID водомата":
-            a = {"wm": None}
-            webGets.update(a)
+# def telegram(view):
+#     def get(self, request, *args, **kwargs):
+#         if request.GET.get('wm') == "ID водомата":
+#             a = {"wm": None}
+#             webGets.update(a)
 
 
-        text = """
-        Имя: %s
-        Телефон: %s
-        Комментарий: %s
-        Количество токенов: %s
-        Email: %s
-        """ % (_name, _phone, _comments, _tokens, _email)
-        print(text)
-        if _name or _phone or _comments:
-            url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=167315364&text=%s" % (text)
-            requests.post(url)   
-            url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=70025022&text=%s" % (text)
-            requests.post(url)   
-            url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=65472004&text=%s" % (text)
-            requests.post(url)   
-            url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=-303230127&text=%s" % (text)
-            requests.post(url)   
-            url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=34436430&text=%s" % (text)
-            requests.post(url)   
-            url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=27390261&text=%s" % (text)
-            requests.post(url) 
-        return render_template('ok.html', users = len(sad()) - 1, koll = sad()[0][1] - 9607)
+#         text = """
+#         Имя: %s
+#         Телефон: %s
+#         Комментарий: %s
+#         Количество токенов: %s
+#         Email: %s
+#         """ % (_name, _phone, _comments, _tokens, _email)
+#         print(text)
+#         if _name or _phone or _comments:
+#             url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=167315364&text=%s" % (text)
+#             requests.post(url)   
+#             url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=70025022&text=%s" % (text)
+#             requests.post(url)   
+#             url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=65472004&text=%s" % (text)
+#             requests.post(url)   
+#             url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=-303230127&text=%s" % (text)
+#             requests.post(url)   
+#             url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=34436430&text=%s" % (text)
+#             requests.post(url)   
+#             url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=27390261&text=%s" % (text)
+#             requests.post(url) 
+#         return render_template('ok.html', users = len(sad()) - 1, koll = sad()[0][1] - 9607)
 
 
 
