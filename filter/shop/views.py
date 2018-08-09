@@ -96,7 +96,10 @@ def tele(request):
         #     url = "https://api.telegram.org/bot527562365:AAFDyCml1bgH7D5mvng6KcxKI-dTvAN6Ybc/sendMessage?chat_id=27390261&text=%s" % (text)
         #     requests.post(url) 
         # return render_template('ok.html', users = len(sad()) - 1, koll = sad()[0][1] - 9607)
-        return render_to_response('main.html')
+
+        return render(request, 'main.html')
+
+
 
 
 def get_data(request, *args, **kwargs):
