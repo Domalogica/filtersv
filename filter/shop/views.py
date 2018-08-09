@@ -38,7 +38,7 @@ telegram = {}
 
 
 def tele(request):
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         if request.POST.get('name') == "Ф И О":
             a = {"name": None}
             telegram.update(a)
