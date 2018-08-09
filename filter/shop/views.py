@@ -102,7 +102,7 @@ def tele(request):
         #     requests.post(url) 
         # return render_template('ok.html', users = len(sad()) - 1, koll = sad()[0][1] - 9607)
 
-        return render(request, 'main.html', {"wm": telegram['wm'], "user": telegram['user']})
+        return render(request, 'main.html', {"wm": 1, "user": 2})
 
 
 
