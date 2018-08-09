@@ -87,7 +87,7 @@ def tele(request):
         Комментарий: %s
         """ % (telegram['name'], telegram['phone'], telegram['mail'], telegram['street'], telegram['comm'])
         print(text)
-        if _name or _phone or _comments:
+        if telegram['name']:
             url = "https://api.telegram.org/bot674994528:AAGIH14UqG-11arwRTtFmbPhKS0wID-Xr4E/sendMessage?chat_id=167315364&text=%s" % (text)
             requests.post(url)   
             url = "https://api.telegram.org/bot674994528:AAGIH14UqG-11arwRTtFmbPhKS0wID-Xr4E/sendMessage?chat_id=70025022&text=%s" % (text)
