@@ -375,44 +375,47 @@
         <div class="heading">
           <h1>Оформить предзаказ</h1>
         </div>
-        <div class="text-center">
-            <div class="col-md-6">
-              <div class="form-group input-group-hg">
+        <form class="form" action="{% url 'tele' %}" method="get">
+          {% csrf_token %}
+          <div class="text-center">
+              <div class="col-md-6">
+                <div class="form-group input-group-hg">
+                  <div class="EditingFormControlNestedControl editing-form-control-nested-control">
+                    <input type="text" maxlength="500" class="form-control name" placeholder="Ф И О" name="name" />
+                  </div>
+                </div>
+              </div> 
+              <div class="col-md-6">
+                <div class="form-group input-group-hg">
+                  <div id="p_lt_ctl00_pageplaceholder_p_lt_ctl12_On_lineForm_viewBiz_ncpemail" class="EditingFormControlNestedControl editing-form-control-nested-control">
+                    <input type="text" maxlength="500" class="form-control email" placeholder="E-mail" name="mail" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group input-group-hg">
+                  <div id="p_lt_ctl00_pageplaceholder_p_lt_ctl12_On_lineForm_viewBiz_ncpemail" class="EditingFormControlNestedControl editing-form-control-nested-control">
+                    <input type="text" maxlength="500" class="form-control email" placeholder="Мобильный телефон" name="phone" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group input-group-hg">
+                  <div class="EditingFormControlNestedControl editing-form-control-nested-control">
+                    <input type="text" maxlength="500" class="form-control phone" placeholder="Адрес доставки" name="street" />
+                  </div>
+                </div>
+              </div>
+              <div>&nbsp;</div>
+              <div class="form-group">
                 <div class="EditingFormControlNestedControl editing-form-control-nested-control">
-                  <input type="text" maxlength="500" class="form-control name" placeholder="Ф И О" />
+                  <textarea rows="8" cols="20" class="form-control message" placeholder="Комментарий" name="comm"></textarea>
                 </div>
               </div>
-            </div> 
-            <div class="col-md-6">
-              <div class="form-group input-group-hg">
-                <div id="p_lt_ctl00_pageplaceholder_p_lt_ctl12_On_lineForm_viewBiz_ncpemail" class="EditingFormControlNestedControl editing-form-control-nested-control">
-                  <input type="text" maxlength="500" class="form-control email" placeholder="E-mail" />
-                </div>
-              </div>
+              <input type="submit" value="ОФОРМИТЬ ПРЕДЗАКАЗ" class="FormButton btn btn-primary" />
             </div>
-            <div class="col-md-6">
-              <div class="form-group input-group-hg">
-                <div id="p_lt_ctl00_pageplaceholder_p_lt_ctl12_On_lineForm_viewBiz_ncpemail" class="EditingFormControlNestedControl editing-form-control-nested-control">
-                  <input type="text" maxlength="500" class="form-control email" placeholder="Мобильный телефон" />
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group input-group-hg">
-                <div class="EditingFormControlNestedControl editing-form-control-nested-control">
-                  <input type="text" maxlength="500" class="form-control phone" placeholder="Адрес доставки" />
-                </div>
-              </div>
-            </div>
-            <div>&nbsp;</div>
-            <div class="form-group">
-              <div class="EditingFormControlNestedControl editing-form-control-nested-control">
-                <textarea rows="8" cols="20" class="form-control message" placeholder="Комментарий"></textarea>
-              </div>
-            </div>
-            <input type="submit" value="ОФОРМИТЬ ПРЕДЗАКАЗ" class="FormButton btn btn-primary" />
           </div>
-        </div>
+        </form>
       </div>
     </section>
 
