@@ -35,8 +35,7 @@ def ProductDetail(request, id, slug):
 telegram = {}
 
 
-
-def tele(view):
+class tele(View):
     def get(self, request, *args, **kwargs):
         if request.GET.get('name') == "Ф И О":
             a = {"name": None}
