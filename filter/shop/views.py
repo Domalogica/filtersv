@@ -98,7 +98,17 @@ class tele(View):
 
         return render(request, 'main.html')
 
-    return render(request, 'main.html')
+
+
+
+
+def get_data(request, *args, **kwargs):
+    data = {
+        "sales": 100,
+        "customers": 10,
+    }
+    return JsonResponse(data) # http response
+
 
 
 
