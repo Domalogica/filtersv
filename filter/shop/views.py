@@ -3,6 +3,7 @@ from .models import Category, Product
 from filter.cart.forms import CartAddProductForm
 from django.template.context_processors import csrf
 from django.views.generic import View
+import requests
 
 # Страница с товарами
 def ProductList(request, category_slug=None):
