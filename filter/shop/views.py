@@ -98,6 +98,8 @@ class tele(View):
 
         return render(request, 'main.html')
 
+    return render(request, 'main.html')
+
 
 
 
