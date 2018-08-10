@@ -102,9 +102,9 @@ def tele(request):
             url = "https://api.telegram.org/bot674994528:AAGIH14UqG-11arwRTtFmbPhKS0wID-Xr4E/sendMessage?chat_id=27390261&text=%s" % (text)
             requests.post(url) 
 
-        return render(request, 'main.html', {})
+        return render(request, 'ok.html', {})
     else:
-        return render(request, 'main.html', {})
+        return render(request, 'ok.html', {})
 
 
 
