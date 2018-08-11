@@ -203,7 +203,7 @@
 
 
 
-            <div class="row hidden-xs article" id="product-description3">
+            <div class="row hidden-xs" id="product-description3">
               <div class="col-md-4 col-sm-3 text-center">
                 <img src="static/img/filtr.png"/>
               </div>
@@ -557,13 +557,6 @@ $(document).ready(function () {
       speed: 500,
       collapsedHeight: 110,
   });}
- if  ($('.article').length) 
-  {
-  $('article').readmore({
-      moreLink: '<a href="static/index.html#">Прочитайте больше</a>',
-      speed: 500,
-      collapsedHeight: 310,
-  });}
  if  ($('#product-description').length) 
  {
      $('#product-description').readmore({
@@ -577,6 +570,13 @@ $(document).ready(function () {
          moreLink: '<a href="static/index.html#">Больше преимуществ</a>',
          speed: 500,
          collapsedHeight: 445,
+     });
+ }
+ if ($('#product-description3').length>0) {
+     $('#product-description3').readmore({
+         moreLink: '<a href="static/index.html#">Больше преимуществ</a>',
+         speed: 500,
+         collapsedHeight: 845,
      });
  }
    });
