@@ -75,6 +75,12 @@ def tele(request):
         else:
             a = {"comm": request.POST.get('comm')}
             telegram.update(a)
+        if request.POST.get('Installments') == "РАССРОЧКА":
+            a = {"Installments": request.POST.get('Installments')}
+            telegram.update(a)
+        else:
+            a = {"Installments": None}
+            telegram.update(a)
 
 
 
