@@ -76,7 +76,7 @@ def tele(request):
             a = {"comm": request.POST.get('comm')}
             telegram.update(a)
         if request.POST.get('Installments') == "РАССРОЧКА":
-            a = {"Installments": request.POST.get('Installments')}
+            a = {"Installments": "Да"}
             print(request.POST.get('Installments'))
             telegram.update(a)
         else:
@@ -94,7 +94,8 @@ def tele(request):
 Почта: %s
 Адрес: %s
 Комментарий: %s
-        """ % (telegram['name'], telegram['phone'], telegram['mail'], telegram['street'], telegram['comm'])
+Рассрочка: %s
+        """ % (telegram['name'], telegram['phone'], telegram['mail'], telegram['street'], telegram['comm'], telegram['Installments'])
         print(text)
         if telegram['name']:
             url = "https://api.telegram.org/bot674994528:AAGIH14UqG-11arwRTtFmbPhKS0wID-Xr4E/sendMessage?chat_id=167315364&text=%s" % (text)
