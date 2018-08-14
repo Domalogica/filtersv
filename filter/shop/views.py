@@ -80,7 +80,7 @@ def tele(request):
             print(request.POST.get('Installments'))
             telegram.update(a)
         else:
-            a = {"Installments": None}
+            a = {"Installments": "Нет"}
             print(request.POST.get('Installments'))
             telegram.update(a)
 
