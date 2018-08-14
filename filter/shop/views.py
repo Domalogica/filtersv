@@ -77,10 +77,13 @@ def tele(request):
             telegram.update(a)
         if request.POST.get('Installments') == "РАССРОЧКА":
             a = {"Installments": request.POST.get('Installments')}
-            telegram.update(a)
+            telegram.update(request.POST.get('Installments'))
+            print(telegram)
         else:
             a = {"Installments": None}
+            telegram.update(request.POST.get('Installments'))
             telegram.update(a)
+
 
 
 
