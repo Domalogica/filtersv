@@ -37,7 +37,6 @@ def ProductDetail(request, id, slug):
 telegram = {}
 
 
-
 def teles(request):
     return render(request, 'main.html')
 
@@ -114,6 +113,7 @@ def tele(request):
         return render(request, 'ok.html', {})
     else:
         return render(request, 'ok.html', {})
+
 
 
 
