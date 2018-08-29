@@ -23,7 +23,6 @@ urlpatterns = [
     url(r'^cart/', include(('filter.cart.urls', 'filter.cart'), namespace='cart')),
     url(r'^', include(('filter.shop.urls', 'filter.shop'), namespace='shop')),
     url(r'^order/', include(('filter.orders.urls', 'filter.orders'), namespace='orders')),
-    url(r'^payment/', include('payment.urls', namespace='payment')),
 ]
 
 if settings.DEBUG:
