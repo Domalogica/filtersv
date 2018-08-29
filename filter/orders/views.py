@@ -4,7 +4,7 @@ from .forms import OrderCreateForm
 from .tasks import OrderCreated
 from filter.cart.cart import Cart
 from django.contrib.admin.views.decorators import staff_member_required
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 
 @staff_member_required
