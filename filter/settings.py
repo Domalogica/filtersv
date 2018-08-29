@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_tinkoff_merchant',
     'filter.shop',
     'filter.cart',
     'filter.orders'
@@ -133,3 +134,8 @@ CART_SESSION_ID = 'cart'
 
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+TINKOFF_PAYMENTS_CONFIG = {
+    'TERMINAL_KEY': '',
+    'SECRET_KEY': '',
+}
