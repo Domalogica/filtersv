@@ -80,11 +80,9 @@ def tele(request):
             telegram.update(a)
         if request.POST.get('Installments') == "РАССРОЧКА":
             a = {"Installments": "Да"}
-            print(request.POST.get('Installments'))
             telegram.update(a)
         else:
             a = {"Installments": "Нет"}
-            print(request.POST.get('Installments'))
             telegram.update(a)
 
 
