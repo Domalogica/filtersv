@@ -87,7 +87,6 @@ def tele(request):
 
 
 
-        print(telegram)
 
         text = """
         Имя: %s
