@@ -136,6 +136,6 @@ CART_SESSION_ID = 'cart'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 TINKOFF_PAYMENTS_CONFIG = {
-    'TERMINAL_KEY': '1531748963989DEMO',
-    'SECRET_KEY': '7grd2lq7pm46iynt',
+    'TERMINAL_KEY': '1531748963989',
+    'SECRET_KEY': 'i4djqu6obzufizr6',
 }
