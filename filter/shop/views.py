@@ -130,10 +130,3 @@ def tele(request):
         return render(request, 'ok.html', {})
 
 
-
-
-
-
-
-
-Я только проверил и перевел с карты у которой нет денег и
