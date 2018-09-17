@@ -1,12 +1,14 @@
+import requests
 from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.utils.crypto import get_random_string
 from .models import Category, Product
 from filter.cart.forms import CartAddProductForm
 from django.template.context_processors import csrf
 from django.views.generic import View
-import requests
 from django_tinkoff_merchant.services import MerchantAPI, PaymentHTTPException
 from django_tinkoff_merchant.models import Payment
+from filter.orders.models import Order
+from .models import Category, Product
 
 
 # Страница с товарами
@@ -111,19 +113,23 @@ def tele(request):
             url = "https://api.telegram.org/bot674994528:AAGIH14UqG-11arwRTtFmbPhKS0wID-Xr4E/sendMessage?chat_id=27390261&text=%s" % (text)
             requests.post(url) 
 
-        # amount in cents, order_id must be unique
-        payment = Payment(amount=14980 * 100, order_id=get_random_string())
+        if request.POST.get('name'):
+            order = Order.objects.create(
+                first_name=request.POST.get('name'),
+                phone=request.POST.get('phone'),
+                email=request.POST.get('mail'),
+                address=request.POST.get('street'),
+                comment=request.POST.get('comm'),
+                installments=not request.POST.get('Installments') is None,
+            )
 
-        try:
-            MerchantAPI().init(payment)
-        except PaymentHTTPException as e:
-            # TODO some actions
-            print('MerchantAPI init failed', e)
-        
-        payment.save()
+            # amount in cents, order_id must be unique
+            payment = Payment(amount=14980 * 100, order_id=order.id)
 
-        if payment.can_redirect():
-            return redirect(payment.payment_url)
+            MerchantAPI().init(payment).save()
+
+            if payment.can_redirect():
+                return redirect(payment.payment_url)
 
         return render(request, 'ok.html', {})
     else:
