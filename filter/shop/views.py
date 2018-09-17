@@ -112,7 +112,7 @@ def tele(request):
             requests.post(url) 
 
         # amount in cents, order_id must be unique
-        payment = Payment(amount=10 * 100, order_id=get_random_string())
+        payment = Payment(amount=14980 * 100, order_id=get_random_string())
 
         try:
             MerchantAPI().init(payment)
