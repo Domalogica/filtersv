@@ -1,19 +1,14 @@
 from django.db import models
-from django.dispatch import receiver
-from django_tinkoff_merchant.signals import payment_update
 from filter.shop.models import Product
 
 
 class Order(models.Model):
     first_name = models.CharField(verbose_name='Имя', max_length=50)
-    last_name = models.CharField(verbose_name='Фамилия', max_length=50, blank=True, null=True)
-    phone = models.CharField(verbose_name='Телефон', max_length=50, blank=True, null=True)
-    email = models.EmailField(verbose_name='Email', blank=True, null=True)
-    address =  models.CharField(verbose_name='Адрес', max_length=250, blank=True, null=True)
-    postal_code = models.CharField(verbose_name='Почтовый код', max_length=20, blank=True, null=True)
-    city = models.CharField(verbose_name='Город', max_length=100, blank=True, null=True)
-    comment = models.TextField(verbose_name='Комментарий', blank=True, null=True)
-    installments = models.BooleanField(verbose_name='Рассрочка', default=False)
+    last_name = models.CharField(verbose_name='Фамилия', max_length=50)
+    email = models.EmailField(verbose_name='Email')
+    address =  models.CharField(verbose_name='Адрес', max_length=250)
+    postal_code = models.CharField(verbose_name='Почтовый код', max_length=20)
+    city = models.CharField(verbose_name='Город', max_length=100)
     created = models.DateTimeField(verbose_name='Создан', auto_now_add=True)
     updated = models.DateTimeField(verbose_name='Обновлен', auto_now=True)
     paid = models.BooleanField(verbose_name='Оплачен', default=False)
@@ -28,12 +23,6 @@ class Order(models.Model):
 
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
-
-@receiver(payment_update)
-def payment_update_callback(sender, **kwargs):
-    payment = kwargs.get('payment')
-    if payment.is_paid():
-        Order.objects.filter(id=payment.order_id).update(paid=True)
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
